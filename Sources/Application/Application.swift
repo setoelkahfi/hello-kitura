@@ -22,6 +22,11 @@ public class App {
 
         // Endpoints
         initializeHealthRoutes(app: self)
+        
+        router.get("/") { (request, response, next) in
+            response.send("Hello, World!")
+            next()
+        }
     }
 
     public func run() throws {
